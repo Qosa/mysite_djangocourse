@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <title>helppage</title>
+</head>
+<body>
+    <h1 style="color:darkgreen;font-family: Helvetica;"> {{ help_insert }} </h1>
+    {% if users_records %}
+        <table>
+            <thead>
+                <th>User name</th>
+                <th>Email</th>
+            </thead>
+        {% for acc in users_records %}
+        <tr>
+            <td>{{ acc.name }}</td>
+            <td>{{ acc.email }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+    {%else%}
+        <h2>zuppan</h2>
+    {%endif%}
+</body>
+</html>
